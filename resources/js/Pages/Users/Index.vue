@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import Pagination from "../../Shared/Pagination";
+import Pagination from "@/Shared/Pagination";
 import {debounce} from "lodash";
 export default {
     components: {
