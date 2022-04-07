@@ -33,6 +33,7 @@
 </template>
 <script>
 import Navbar from "./Navbar";
+import {useCurrentUser} from "@/Composables/useCurrentUser";
 
 export default {
     components: {Navbar},
@@ -40,6 +41,9 @@ export default {
         username() {
             return this.$page.props.auth.user.username;
         }
+    },
+    mounted() {
+      console.log(useCurrentUser());
     }
 }
 </script>

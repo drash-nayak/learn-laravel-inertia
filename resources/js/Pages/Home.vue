@@ -1,24 +1,31 @@
 <template>
     <Head>
         <title>Home</title>
-        <meta type="description" content="Home information" head-key="description">
+        <meta name="title" content="My App - Home" head-key="title" />
+        <meta name="description" content="Home information" head-key="description" />
     </Head>
-    <h1 class="text-4xl font-bold">
+    <h1 class="text-4xl font-bold mb-4">
         Home
     </h1>
-    Hello {{ name }} with dob {{ dob }}
+    <Highlight :code="snippet" />
 </template>
 <script>
-import Navbar from "../Shared/Navbar";
-
+import Highlight from "../Components/Highlight";
+let snippet = `
+     class ExampleALL
+            {
+                public function __construct()
+                {
+                    //
+                }
+            }
+`.trim();
 export default {
-    props: {
-        name: String,
-        dob: String,
-        frameworks: Array,
-    },
-    components: {
-        Navbar
+    components: {Highlight},
+    setup(){
+        return{
+            snippet
+        }
     }
 }
 </script>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
+      //  return UserResource::collection(User::all());
         return inertia('Users/Index', [
             'users' => User::query()
                 ->when($request->search, function ($query, $search) {
